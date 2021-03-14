@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1000,
+    "items": null
+  },
+  {
+    "id": 1001,
+    "items": null
+  },
+  {
+    "id": 9999,
+    "items": [
+      {
+        "id": 0,
+        "name": "Milk",
+        "quantity": 2,
+        "weight": 0,
+        "unit": null
+      },
+      {
+        "id": 1,
+        "name": "Chocolate",
+        "quantity": 3,
+        "weight": 0,
+        "unit": null
+      },
+      {
+        "id": 2,
+        "name": "Chips",
+        "quantity": 0,
+        "weight": 0,
+        "unit": null
+      }
+    ]
+  }
+]
