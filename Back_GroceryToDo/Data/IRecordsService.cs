@@ -6,7 +6,7 @@ namespace Back_GroceryToDo.Data
     public interface IRecordsService
     {
         Task<Record> GetRecordByIdAsync(int id);
-        Task<bool> AddItemToRecordAsync(Item item);
+        Task<Item> AddItemToRecordAsync(Item item, int recordId);
         Task<bool> RemoveItemFromRecordAsync(int itemId);
         public Task<bool> WipeRecordAsync();
     }

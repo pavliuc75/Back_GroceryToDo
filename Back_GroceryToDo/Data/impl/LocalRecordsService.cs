@@ -63,9 +63,16 @@ namespace Back_GroceryToDo.Data.impl
             }
         }
 
-        public async Task<bool> AddItemToRecordAsync(Item item)
+        public async Task<Item> AddItemToRecordAsync(Item item, int recordId)
         {
-            throw new System.NotImplementedException();
+            Record record = await GetRecordByIdAsync(recordId);
+            int recordIndex = records.IndexOf(record);
+            int max = record.Items.Max(i => i.Id);
+            item.Id = (++max);
+            record.Items.Add(item);
+            records[recordIndex] = record;
+            WriteRecordsToFile();
+            return item;
         }
 
         public async Task<bool> RemoveItemFromRecordAsync(int itemId)

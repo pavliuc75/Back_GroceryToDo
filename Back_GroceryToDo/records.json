@@ -1,1 +1,47 @@
-[{"id":1000,"items":null},{"id":1001,"items":null},{"id":9999,"items":[{"id":0,"name":"Milk","completed":false,"quantity":2,"weight":0,"unit":null},{"id":1,"name":"Chocolate","completed":false,"quantity":3,"weight":0,"unit":null},{"id":2,"name":"Chips","completed":false,"quantity":0,"weight":0,"unit":null}]}]
+[
+  {
+    "id": 1000,
+    "items": null
+  },
+  {
+    "id": 1001,
+    "items": null
+  },
+  {
+    "id": 9999,
+    "items": [
+      {
+        "id": 0,
+        "name": "Milk",
+        "completed": false,
+        "quantity": 2,
+        "weight": 0,
+        "unit": null
+      },
+      {
+        "id": 1,
+        "name": "Chocolate",
+        "completed": false,
+        "quantity": 3,
+        "weight": 0,
+        "unit": null
+      },
+      {
+        "id": 2,
+        "name": "Chips",
+        "completed": false,
+        "quantity": 0,
+        "weight": 0,
+        "unit": null
+      },
+      {
+        "id": 3,
+        "name": "Cocaine",
+        "completed": false,
+        "quantity": 0,
+        "weight": 0,
+        "unit": "kg"
+      }
+    ]
+  }
+]

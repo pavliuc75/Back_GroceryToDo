@@ -31,5 +31,26 @@ namespace Back_GroceryToDo.Controllers
                 return StatusCode(500, e.Message);
             }
         }
+
+        [HttpPost]
+        [Route("{recordId:int}")]
+        public async Task<ActionResult<Item>> AddItemToRecordAsync([FromBody] Item item)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                Item added = await recordsService.AddItemToRecordAsync(item, 9999);
+                return Created($"/{added.Id}", added);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);    
+            }
+        }
     }
 }
