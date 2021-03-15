@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Back_GroceryToDo.Controllers
 {
     [ApiController]
-    [Route("list")]
+    [Route("Record")]
     public class RecordsController : ControllerBase
     {
         private IRecordsService recordsService;
