@@ -34,7 +34,7 @@ namespace Back_GroceryToDo.Controllers
 
         [HttpPost]
         [Route("{recordId:int}")]
-        public async Task<ActionResult<Item>> AddItemToRecordAsync([FromBody] Item item)
+        public async Task<ActionResult<Item>> AddItemToRecordAsync([FromBody] Item item, [FromRoute] int recordId)
         {
             if (!ModelState.IsValid)
             {
@@ -43,13 +43,34 @@ namespace Back_GroceryToDo.Controllers
 
             try
             {
-                Item added = await recordsService.AddItemToRecordAsync(item, 9999);
+                Item added = await recordsService.AddItemToRecordAsync(item, recordId);
                 return Created($"/{added.Id}", added);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                return StatusCode(500, e.Message);    
+                return StatusCode(500, e.Message);
+            }
+        }
+
+        [HttpPatch]
+        [Route("{recordId:int}")]
+        public async Task<ActionResult<Item>> UpdateItemInRecordAsync([FromBody] Item item, [FromRoute] int recordId)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                Item updated = await recordsService.UpdateItemInRecordAsync(item, recordId);
+                return Ok(updated);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
             }
         }
     }

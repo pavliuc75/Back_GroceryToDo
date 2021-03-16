@@ -75,6 +75,18 @@ namespace Back_GroceryToDo.Data.impl
             return item;
         }
 
+        public async Task<Item> UpdateItemInRecordAsync(Item item, int recordId)
+        {
+            Record record = await GetRecordByIdAsync(recordId);
+            int recordIndex = records.IndexOf(record);
+            Item oldItem = record.Items.FirstOrDefault(i => i.Id == item.Id);
+            int itemIndex = record.Items.IndexOf(oldItem);
+            record.Items[itemIndex] = item;
+            records[recordIndex] = record;
+            WriteRecordsToFile();
+            return item;
+        }
+
         public async Task<bool> RemoveItemFromRecordAsync(int itemId)
         {
             throw new System.NotImplementedException();
