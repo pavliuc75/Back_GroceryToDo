@@ -35,4 +35,3 @@ E:\Projects\GroceryAppBlazor\Back_GroceryToDo\Back_GroceryToDo\obj\Debug\net5.0\
 E:\Projects\GroceryAppBlazor\Back_GroceryToDo\Back_GroceryToDo\obj\Debug\net5.0\ref\Back_GroceryToDo.dll
 E:\Projects\GroceryAppBlazor\Back_GroceryToDo\Back_GroceryToDo\obj\Debug\net5.0\Back_GroceryToDo.pdb
 E:\Projects\GroceryAppBlazor\Back_GroceryToDo\Back_GroceryToDo\obj\Debug\net5.0\Back_GroceryToDo.genruntimeconfig.cache
-E:\Projects\GroceryAppBlazor\Back_GroceryToDo\Back_GroceryToDo\bin\Debug\net5.0\records.json
