@@ -11,7 +11,7 @@
   },
   {
     "id": 9999,
-    "description": "lllll",
+    "description": "ssample",
     "items": [
       {
         "id": 1,
@@ -24,7 +24,7 @@
       {
         "id": 2,
         "name": "Chips",
-        "isCompleted": true,
+        "isCompleted": false,
         "quantity": 0,
         "weight": 0,
         "unit": null
@@ -32,7 +32,7 @@
       {
         "id": 3,
         "name": "test",
-        "isCompleted": true,
+        "isCompleted": false,
         "quantity": 0,
         "weight": 0,
         "unit": "string"

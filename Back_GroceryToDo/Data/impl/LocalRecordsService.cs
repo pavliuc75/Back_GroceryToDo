@@ -67,8 +67,17 @@ namespace Back_GroceryToDo.Data.impl
         {
             Record record = await GetRecordByIdAsync(recordId);
             int recordIndex = records.IndexOf(record);
-            int max = record.Items.Max(i => i.Id);
-            item.Id = (++max);
+            if (record.Items == null || !record.Items.Any())
+            {
+                record.Items = new List<Item>();
+                item.Id = 1;
+            }
+            else
+            {
+                int max = record.Items.Max(i => i.Id);
+                item.Id = (++max);
+            }
+
             record.Items.Add(item);
             records[recordIndex] = record;
             WriteRecordsToFile();
