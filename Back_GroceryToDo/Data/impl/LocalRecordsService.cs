@@ -96,10 +96,16 @@ namespace Back_GroceryToDo.Data.impl
             return item;
         }
 
-        public async Task<bool> RemoveItemFromRecordAsync(int itemId)
+        public async Task RemoveItemFromRecordAsync(int itemId, int recordId)
         {
-            throw new System.NotImplementedException();
+            Record record = await GetRecordByIdAsync(recordId);
+            int recordIndex = records.IndexOf(record);
+            Item toBeRemoved = record.Items.FirstOrDefault(i => i.Id == itemId);
+            record.Items.Remove(toBeRemoved);
+            records[recordIndex] = record;
+            WriteRecordsToFile();
         }
+
 
         public async Task<bool> WipeRecordAsync()
         {

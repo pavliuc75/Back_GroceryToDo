@@ -8,7 +8,7 @@ namespace Back_GroceryToDo.Data
         Task<Record> GetRecordByIdAsync(int id);
         Task<Item> AddItemToRecordAsync(Item item, int recordId);
         Task<Item> UpdateItemInRecordAsync(Item item, int recordId);
-        Task<bool> RemoveItemFromRecordAsync(int itemId);
+        Task RemoveItemFromRecordAsync(int itemId, int recordId);
         public Task<bool> WipeRecordAsync();
     }
 }

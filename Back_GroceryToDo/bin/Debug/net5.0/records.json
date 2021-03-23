@@ -1,0 +1,45 @@
+[
+  {
+    "id": 1000,
+    "description": null,
+    "items": null
+  },
+  {
+    "id": 1001,
+    "description": null,
+    "items": null
+  },
+  {
+    "id": 9999,
+    "description": null,
+    "items": [
+      {
+        "id": 0,
+        "name": "Milk",
+        "details": null,
+        "isCompleted": false,
+        "quantity": 2,
+        "weight": 0,
+        "unit": null
+      },
+      {
+        "id": 1,
+        "name": "Chocolate",
+        "details": null,
+        "isCompleted": false,
+        "quantity": 3,
+        "weight": 0,
+        "unit": null
+      },
+      {
+        "id": 2,
+        "name": "Chips",
+        "details": null,
+        "isCompleted": true,
+        "quantity": 0,
+        "weight": 0,
+        "unit": null
+      }
+    ]
+  }
+]

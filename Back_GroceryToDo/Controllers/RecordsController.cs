@@ -73,5 +73,20 @@ namespace Back_GroceryToDo.Controllers
                 return StatusCode(500, e.Message);
             }
         }
+
+        [HttpDelete]
+        public async Task<ActionResult> DeleteRecordAsync([FromQuery] int itemId, [FromQuery] int recordId)
+        {
+            try
+            {
+                await recordsService.RemoveItemFromRecordAsync(itemId, recordId);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
     }
 }
