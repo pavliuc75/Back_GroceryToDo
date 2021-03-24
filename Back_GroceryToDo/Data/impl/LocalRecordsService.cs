@@ -40,11 +40,11 @@ namespace Back_GroceryToDo.Data.impl
             Item i2 = new Item() {Id = 2, Name = "Chips"};
             Record r1000 = new Record() {Id = 1000};
             Record r1001 = new Record() {Id = 1001};
-            Record r9999 = new Record() {Id = 9999};
-            r9999.Items = new List<Item>() {i0, i1, i2};
+            Record r1002 = new Record() {Id = 9999};
+            r1002.Items = new List<Item>() {i0, i1, i2};
             Record[] rs =
             {
-                r1000, r1001, r9999
+                r1000, r1001, r1002
             };
             records = rs.ToList();
         }
@@ -61,6 +61,25 @@ namespace Back_GroceryToDo.Data.impl
                 Console.WriteLine(e);
                 throw;
             }
+        }
+
+        public async Task<Record> CreateRecordAsync()
+        {
+            Record record;
+            if (records == null || !records.Any())
+            {
+                records = new List<Record>();
+                record = new Record {Id = 1000};
+            }
+            else
+            {
+                int max = records.Max(i => i.Id);
+                record = new Record {Id = (++max)};
+            }
+
+            records.Add(record);
+            WriteRecordsToFile();
+            return record;
         }
 
         public async Task<Item> AddItemToRecordAsync(Item item, int recordId)
@@ -96,6 +115,15 @@ namespace Back_GroceryToDo.Data.impl
             return item;
         }
 
+        public async Task UpdateRecordDescriptionAsync(int recordId, string description)
+        {
+            Record record = await GetRecordByIdAsync(recordId);
+            int recordIndex = records.IndexOf(record);
+            record.Description = description;
+            records[recordIndex] = record;
+            WriteRecordsToFile();
+        }
+
         public async Task RemoveItemFromRecordAsync(int itemId, int recordId)
         {
             Record record = await GetRecordByIdAsync(recordId);
@@ -107,9 +135,13 @@ namespace Back_GroceryToDo.Data.impl
         }
 
 
-        public async Task<bool> WipeRecordAsync()
+        public async Task WipeRecordAsync(int recordId)
         {
-            throw new System.NotImplementedException();
+            Record record = await GetRecordByIdAsync(recordId);
+            int recordIndex = records.IndexOf(record);
+            record.Items.Clear();
+            records[recordIndex] = record;
+            WriteRecordsToFile();
         }
     }
 }

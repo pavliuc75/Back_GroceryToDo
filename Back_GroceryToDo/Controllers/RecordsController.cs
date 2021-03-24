@@ -18,11 +18,27 @@ namespace Back_GroceryToDo.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<Record>> GetRecordByIdAsync(int id)
+        [Route("{recordId:int}")]
+        public async Task<ActionResult<Record>> GetRecordByIdAsync([FromRoute] int recordId)
         {
             try
             {
-                Record record = await recordsService.GetRecordByIdAsync(id);
+                Record record = await recordsService.GetRecordByIdAsync(recordId);
+                return Ok(record);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<Record>> CreateRecordAsync()
+        {
+            try
+            {
+                Record record = await recordsService.CreateRecordAsync();
                 return Ok(record);
             }
             catch (Exception e)
@@ -74,12 +90,44 @@ namespace Back_GroceryToDo.Controllers
             }
         }
 
+        [HttpPatch]
+        public async Task<ActionResult> UpdateRecordDescriptionAsync([FromQuery] int recordId,
+            [FromQuery] string description)
+        {
+            try
+            {
+                await recordsService.UpdateRecordDescriptionAsync(recordId, description);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+
         [HttpDelete]
         public async Task<ActionResult> DeleteRecordAsync([FromQuery] int itemId, [FromQuery] int recordId)
         {
             try
             {
                 await recordsService.RemoveItemFromRecordAsync(itemId, recordId);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return StatusCode(500, e.Message);
+            }
+        }
+
+        [HttpDelete]
+        [Route("{recordId:int}")]
+        public async Task<ActionResult> WipeRecordAsync([FromRoute] int recordId)
+        {
+            try
+            {
+                await recordsService.WipeRecordAsync(recordId);
                 return Ok();
             }
             catch (Exception e)

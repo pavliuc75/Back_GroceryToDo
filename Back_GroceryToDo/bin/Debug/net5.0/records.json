@@ -6,11 +6,11 @@
   },
   {
     "id": 1001,
-    "description": null,
-    "items": null
+    "description": "test",
+    "items": []
   },
   {
-    "id": 9999,
+    "id": 1002,
     "description": null,
     "items": [
       {
@@ -28,15 +28,6 @@
         "details": null,
         "isCompleted": false,
         "quantity": 3,
-        "weight": 0,
-        "unit": null
-      },
-      {
-        "id": 2,
-        "name": "Chips",
-        "details": null,
-        "isCompleted": true,
-        "quantity": 0,
         "weight": 0,
         "unit": null
       }
