@@ -107,7 +107,7 @@ namespace Back_GroceryToDo.Controllers
         }
 
         [HttpDelete]
-        public async Task<ActionResult> DeleteRecordAsync([FromQuery] int itemId, [FromQuery] int recordId)
+        public async Task<ActionResult> RemoveItemFromRecordAsync([FromQuery] int itemId, [FromQuery] int recordId)
         {
             try
             {
