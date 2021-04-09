@@ -39,7 +39,7 @@ namespace Back_GroceryToDo.Controllers
             try
             {
                 Record record = await recordsService.CreateRecordAsync();
-                return Ok(record);
+                return Ok(record.Id);
             }
             catch (Exception e)
             {

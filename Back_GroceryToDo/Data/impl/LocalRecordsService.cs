@@ -77,6 +77,7 @@ namespace Back_GroceryToDo.Data.impl
                 record = new Record {Id = (++max)};
             }
 
+            record.Items = new List<Item>();
             records.Add(record);
             WriteRecordsToFile();
             return record;
