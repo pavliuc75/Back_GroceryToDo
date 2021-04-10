@@ -17,7 +17,7 @@
         "id": 1,
         "name": "ldaldas",
         "details": null,
-        "isCompleted": false,
+        "isCompleted": true,
         "quantity": 0,
         "weight": 0,
         "unit": null
@@ -30,13 +30,32 @@
         "quantity": 0,
         "weight": 0,
         "unit": null
+      },
+      {
+        "id": 3,
+        "name": "tets",
+        "details": null,
+        "isCompleted": false,
+        "quantity": 0,
+        "weight": 0,
+        "unit": null
       }
     ]
   },
   {
     "id": 1003,
-    "description": null,
-    "items": []
+    "description": "test",
+    "items": [
+      {
+        "id": 1,
+        "name": "olo",
+        "details": null,
+        "isCompleted": false,
+        "quantity": 0,
+        "weight": 0,
+        "unit": null
+      }
+    ]
   },
   {
     "id": 1004,
@@ -52,5 +71,20 @@
     "id": 1006,
     "description": null,
     "items": []
+  },
+  {
+    "id": 1007,
+    "description": "kek",
+    "items": [
+      {
+        "id": 1,
+        "name": "test",
+        "details": null,
+        "isCompleted": false,
+        "quantity": 0,
+        "weight": 0,
+        "unit": null
+      }
+    ]
   }
 ]
